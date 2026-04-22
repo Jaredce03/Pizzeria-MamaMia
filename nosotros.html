@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosotros — Mama Mia Pizzería</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nosotros.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">🍕</div>
+      <span class="nav-logo-text">Mama Mia</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="menu.html">Menú</a></li>
+      <li><a href="nosotros.html" class="active">Nosotros</a></li>
+      <li><a href="nosotros.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-cart" onclick="location.href='carrito.html'" aria-label="Carrito">🛒</button>
+      <a href="login.html" class="nav-signin">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Iniciar sesión
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── HERO NOSOTROS ── -->
+  <section class="nos-hero">
+    <div class="nos-hero-bg" id="nosBg"></div>
+    <div class="nos-hero-overlay"></div>
+    <div class="nos-hero-content">
+      <p class="nos-hero-tag">ESTAMOS AQUÍ PARA TI</p>
+      <h1 class="nos-hero-title">Nuestra Historia</h1>
+      <p class="nos-hero-sub">Desde Nápoles hasta tu mesa, con amor</p>
+    </div>
+  </section>
+
+  <!-- ── HISTORIA ── -->
+  <section class="historia">
+    <div class="historia-grid">
+      <div class="historia-text reveal">
+        <p class="section-label">DESDE 1987</p>
+        <h2 class="section-title" style="margin-bottom:1.2rem">Una familia, una pasión</h2>
+        <p>Todo comenzó cuando Giuseppe Rossi, un joven pizzaiolo napolitano, decidió cruzar el Mediterráneo con una maleta llena de sueños y la receta de su abuela cosida en el forro. En 1987, abrió las puertas de Mama Mia en el corazón de Lima.</p>
+        <p>Lo que empezó como un pequeño local con cuatro mesas se convirtió en el punto de encuentro del barrio. La gente venía por la pizza, pero volvía por el ambiente, las risas y ese aroma inconfundible a masa recién horneada que se escapaba por la calle.</p>
+        <p>Hoy, casi 40 años después, la tercera generación de la familia Rossi sigue amasando con las manos, seleccionando cada tomate y cuidando el fuego del mismo horno de leña que Giuseppe trajo pieza a pieza desde Nápoles.</p>
+      </div>
+      <div class="historia-img-col reveal delay1">
+        <div class="historia-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Preparando pizza"/>
+          <div class="historia-badge">
+            <span class="badge-num">+38</span>
+            <span class="badge-label">años de tradición</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALORES ── -->
+  <section class="valores">
+    <h2 class="section-title" style="text-align:center;margin-bottom:3rem">Nuestros valores</h2>
+    <div class="valores-grid">
+      <div class="valor-card reveal">
+        <div class="valor-icon red-light">❤️</div>
+        <h3>Pasión</h3>
+        <p>Cada pizza que hacemos lleva el amor y dedicación de nuestra familia italiana.</p>
+      </div>
+      <div class="valor-card reveal delay1">
+        <div class="valor-icon gold-light">🏅</div>
+        <h3>Calidad</h3>
+        <p>Solo los mejores ingredientes. Sin compromisos. Sin atajos.</p>
+      </div>
+      <div class="valor-card reveal delay2">
+        <div class="valor-icon orange-light">👥</div>
+        <h3>Comunidad</h3>
+        <p>Somos parte de tu barrio. Tu mesa siempre estará lista para ti.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EQUIPO ── -->
+  <section class="equipo">
+    <p class="section-label" style="text-align:center">LAS PERSONAS DETRÁS</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:3rem">Nuestro equipo</h2>
+    <div class="equipo-grid">
+      <div class="equipo-card reveal">
+        <div class="equipo-avatar" style="background:linear-gradient(135deg,#C8372D,#E8522A)">G</div>
+        <h3>Giuseppe Rossi</h3>
+        <p class="equipo-rol">Chef Fundador</p>
+        <p class="equipo-desc">Nacido en Nápoles, Giuseppe trajo sus secretos familiares a Lima en 1987.</p>
+      </div>
+      <div class="equipo-card reveal delay1">
+        <div class="equipo-avatar" style="background:linear-gradient(135deg,#C8372D,#E8522A)">M</div>
+        <h3>Maria Rossi</h3>
+        <p class="equipo-rol">Directora Creativa</p>
+        <p class="equipo-desc">Hija de Giuseppe, María fusiona la tradición con nuevas tendencias culinarias.</p>
+      </div>
+      <div class="equipo-card reveal delay2">
+        <div class="equipo-avatar" style="background:linear-gradient(135deg,#C8372D,#E8522A)">M</div>
+        <h3>Marco Bianchi</h3>
+        <p class="equipo-rol">Pizzaiolo Senior</p>
+        <p class="equipo-desc">Con 20 años de experiencia, Marco domina el arte del horno de leña.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACTO ── -->
+  <section class="contacto" id="contacto">
+
+    <!-- Hero contacto -->
+    <div class="contacto-hero">
+      <div class="contacto-hero-bg"></div>
+      <div class="contacto-hero-overlay"></div>
+      <div class="contacto-hero-text">
+        <p class="nos-hero-tag">ESTAMOS AQUÍ PARA TI</p>
+        <h2 class="nos-hero-title" style="font-size:clamp(2rem,4vw,3.2rem)">Contacto</h2>
+      </div>
+    </div>
+
+    <!-- Cuerpo contacto -->
+    <div class="contacto-body">
+
+      <!-- Info izquierda -->
+      <div class="contacto-info reveal">
+        <p class="section-label">INFORMACIÓN DE CONTACTO</p>
+        <h3 class="contacto-title">Visítanos o<br><em>escríbenos</em></h3>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon red-light">📍</div>
+            <div>
+              <p class="info-label">DIRECCIÓN</p>
+              <p class="info-val">Jr. Grau 245</p>
+              <p class="info-val">Chosica, Lima, Perú</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon red-light">📞</div>
+            <div>
+              <p class="info-label">TELÉFONO</p>
+              <p class="info-val">+51 1 360 7890</p>
+              <p class="info-val">+51 987 654 321 (WhatsApp)</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon red-light">✉️</div>
+            <div>
+              <p class="info-label">EMAIL</p>
+              <p class="info-val">hola@pizzeriamamamia.pe</p>
+              <p class="info-val">pedidos@pizzeriamamamia.pe</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon red-light">🕐</div>
+            <div>
+              <p class="info-label">HORARIO</p>
+              <p class="info-val">Lunes a Viernes: 12:00 – 22:00</p>
+              <p class="info-val">Sábado y Domingo: 12:00 – 23:00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapa -->
+        <div class="mapa-wrap">
+          <a class="mapa-btn" href="https://maps.google.com/?q=Jr.+Grau+245+Chosica+Lima" target="_blank">Abrir en Maps ↗</a>
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-76.7200,-11.9400,-76.6900,-11.9200&layer=mapnik&marker=-11.9300,-76.7050"
+            width="100%" height="200" style="border:0;border-radius:12px;margin-top:0.8rem"
+            loading="lazy" title="Ubicación Mama Mia">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Formulario derecha -->
+      <div class="contacto-form-wrap reveal delay1">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Envíanos un mensaje</h3>
+
+        <div class="form-row">
+          <div class="field">
+            <label>NOMBRE <span class="req">*</span></label>
+            <input type="text" placeholder="Tu nombre" id="cNombre"/>
+            <span class="field-error" id="cNombreErr"></span>
+          </div>
+          <div class="field">
+            <label>EMAIL <span class="req">*</span></label>
+            <input type="email" placeholder="tu@email.com" id="cEmail"/>
+            <span class="field-error" id="cEmailErr"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>TELÉFONO</label>
+          <input type="tel" placeholder="+51 987 000 000" id="cTel"/>
+        </div>
+
+        <div class="field">
+          <label>ASUNTO <span class="req">*</span></label>
+          <select id="cAsunto">
+            <option value="">Selecciona un asunto</option>
+            <option>Consulta general</option>
+            <option>Reserva de mesa</option>
+            <option>Pedido a domicilio</option>
+            <option>Sugerencia o reclamo</option>
+            <option>Trabajo con nosotros</option>
+            <option>Otro</option>
+          </select>
+          <span class="field-error" id="cAsuntoErr"></span>
+        </div>
+
+        <div class="field">
+          <label>MENSAJE <span class="req">*</span> <span class="char-count" id="charCount">(0/500)</span></label>
+          <textarea id="cMensaje" placeholder="Escribe tu mensaje aquí..." rows="5" maxlength="500" oninput="updateChar()"></textarea>
+          <span class="field-error" id="cMensajeErr"></span>
+        </div>
+
+        <button class="btn-enviar" onclick="handleContacto()">
+          ✈️ Enviar Mensaje
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">🍕 Mama Mia Pizzería</div>
+    <div class="footer-copy">© 2026 Mama Mia. Todos los derechos reservados.</div>
+    <div class="footer-links">
+      <a href="nosotros.html">Nosotros</a>
+      <a href="nosotros.html#contacto">Contacto</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/nosotros.js"></script>
+</body>
+</html>
