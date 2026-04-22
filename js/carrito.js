@@ -4,50 +4,50 @@
 
 let cart = JSON.parse(localStorage.getItem('mamamia_cart') || '[]');
 const pizzaImgs = {
-    margherita: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80',
-    diavola: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80',
-    verdure: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=200&q=80',
-    prosciutto: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80',
-    quattro: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80',
-    tartufo: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=200&q=80',
+  margherita: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80',
+  diavola: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80',
+  verdure: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=200&q=80',
+  prosciutto: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80',
+  quattro: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80',
+  tartufo: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=200&q=80',
 };
 const defaultImg = 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80';
 
 function getImg(name) {
-    const key = Object.keys(pizzaImgs).find(k => name.toLowerCase().includes(k));
-    return key ? pizzaImgs[key] : defaultImg;
+  const key = Object.keys(pizzaImgs).find(k => name.toLowerCase().includes(k));
+  return key ? pizzaImgs[key] : defaultImg;
 }
 
 function render() {
-    const list = document.getElementById('itemsList');
-    const empty = document.getElementById('emptyCart');
-    const actions = document.getElementById('carritoActions');
-    const right = document.getElementById('carritoRight');
-    const resumen = document.getElementById('resumenItems');
-    const count = document.getElementById('carritoCount');
-    const cartBadge = document.getElementById('cartCount');
+  const list = document.getElementById('itemsList');
+  const empty = document.getElementById('emptyCart');
+  const actions = document.getElementById('carritoActions');
+  const right = document.getElementById('carritoRight');
+  const resumen = document.getElementById('resumenItems');
+  const count = document.getElementById('carritoCount');
+  const cartBadge = document.getElementById('cartCount');
 
-    const total = cart.reduce((s, i) => s + i.price, 0);
-    const items = cart.length;
+  const total = cart.reduce((s, i) => s + i.price, 0);
+  const items = cart.length;
 
-    // Badge nav
-    if (cartBadge) cartBadge.textContent = items;
-    count.textContent = `${items} producto${items !== 1 ? 's' : ''} en tu pedido`;
+  // Badge nav
+  if (cartBadge) cartBadge.textContent = items;
+  count.textContent = `${items} producto${items !== 1 ? 's' : ''} en tu pedido`;
 
-    if (items === 0) {
-        list.innerHTML = '';
-        empty.classList.remove('hidden');
-        actions.classList.add('hidden');
-        right.classList.add('hidden');
-        return;
-    }
+  if (items === 0) {
+    list.innerHTML = '';
+    empty.classList.remove('hidden');
+    actions.classList.add('hidden');
+    right.classList.add('hidden');
+    return;
+  }
 
-    empty.classList.add('hidden');
-    actions.classList.remove('hidden');
-    right.classList.remove('hidden');
+  empty.classList.add('hidden');
+  actions.classList.remove('hidden');
+  right.classList.remove('hidden');
 
-    // Items list
-    list.innerHTML = cart.map((item, i) => `
+  // Items list
+  list.innerHTML = cart.map((item, i) => `
     <div class="item-card">
       <img class="item-img" src="${getImg(item.name)}" alt="${item.name}"/>
       <div class="item-info">
@@ -70,75 +70,108 @@ function render() {
     </div>
   `).join('');
 
-    // Resumen
-    resumen.innerHTML = cart.map(item =>
-        `<div class="resumen-item"><span>${item.name} x${item.qty}</span><span>S/ ${item.price.toFixed(2)}</span></div>`
-    ).join('');
+  // Resumen
+  resumen.innerHTML = cart.map(item =>
+    `<div class="resumen-item"><span>${item.name} x${item.qty}</span><span>S/ ${item.price.toFixed(2)}</span></div>`
+  ).join('');
 
-    document.getElementById('resSubtotal').textContent = `S/ ${total.toFixed(2)}`;
-    document.getElementById('resTotal').textContent = `S/ ${total.toFixed(2)}`;
-    document.getElementById('btnTotal').textContent = `S/ ${total.toFixed(2)}`;
+  document.getElementById('resSubtotal').textContent = `S/ ${total.toFixed(2)}`;
+  document.getElementById('resTotal').textContent = `S/ ${total.toFixed(2)}`;
+  document.getElementById('btnTotal').textContent = `S/ ${total.toFixed(2)}`;
 }
 
 const sizeMap = { personal: '25cm', mediana: '33cm', familiar: '42cm' };
 function capitalize(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
 
 function deleteItem(i) {
-    cart.splice(i, 1);
-    save(); render();
+  cart.splice(i, 1);
+  save(); render();
 }
 
 function changeQty(i, delta) {
-    if (cart[i].qty + delta < 1) return;
-    // Recalcular precio unitario
-    const unit = cart[i].price / cart[i].qty;
-    cart[i].qty += delta;
-    cart[i].price = parseFloat((unit * cart[i].qty).toFixed(2));
-    save(); render();
+  if (cart[i].qty + delta < 1) return;
+  // Recalcular precio unitario
+  const unit = cart[i].price / cart[i].qty;
+  cart[i].qty += delta;
+  cart[i].price = parseFloat((unit * cart[i].qty).toFixed(2));
+  save(); render();
 }
 
 function vaciarCarrito() {
-    if (!confirm('¿Seguro que quieres vaciar el carrito?')) return;
-    cart = []; save(); render();
+  if (!confirm('¿Seguro que quieres vaciar el carrito?')) return;
+  cart = []; save(); render();
 }
 
 function save() { localStorage.setItem('mamamia_cart', JSON.stringify(cart)); }
 
-function selectPago(el) { /* visual handled by CSS :has */ }
+function selectPago(el) {
+  const esTarjeta = el.value === 'tarjeta';
+  const modalDelivery = document.getElementById('modalDelivery');
+  if (!modalDelivery) return;
+  if (esTarjeta) {
+    modalDelivery.classList.remove('disabled');
+  } else {
+    // Si no es tarjeta, forzar recojo
+    modalDelivery.classList.add('disabled');
+    document.querySelector('input[name="modalidad"][value="recojo"]').checked = true;
+    document.getElementById('modalRecojo').classList.add('active-modal');
+    document.getElementById('modalDelivery').classList.remove('active-modal');
+    document.getElementById('direccionWrap').classList.add('hidden');
+  }
+}
+
+function onModalidad() {
+  const val = document.querySelector('input[name="modalidad"]:checked')?.value;
+  document.getElementById('modalRecojo').classList.toggle('active-modal', val === 'recojo');
+  document.getElementById('modalDelivery').classList.toggle('active-modal', val === 'delivery');
+  document.getElementById('direccionWrap').classList.toggle('hidden', val !== 'delivery');
+}
+
+// Inicializar: delivery deshabilitado por defecto (requiere tarjeta)
+window.addEventListener('DOMContentLoaded', () => {
+  const modalDelivery = document.getElementById('modalDelivery');
+  if (modalDelivery) modalDelivery.classList.add('disabled');
+});
 
 function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg; t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
 function confirmarPedido() {
-    const tel = document.getElementById('telefono').value.trim();
-    const err = document.getElementById('telErr');
+  const tel = document.getElementById('telefono').value.trim();
+  const err = document.getElementById('telErr');
+  const modalidad = document.querySelector('input[name="modalidad"]:checked')?.value || 'recojo';
+  const direccion = document.getElementById('direccion')?.value.trim();
+  const dirErr = document.getElementById('dirErr');
 
-    if (!tel) { err.textContent = 'El teléfono es requerido'; return; }
-    err.textContent = '';
+  let valid = true;
+  if (!tel) { err.textContent = 'El teléfono es requerido'; valid = false; }
+  else err.textContent = '';
+  if (modalidad === 'delivery' && !direccion) {
+    dirErr.textContent = 'La dirección es requerida'; valid = false;
+  } else if (dirErr) dirErr.textContent = '';
 
-    if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
+  if (!valid || cart.length === 0) { if (cart.length === 0) showToast('Tu carrito está vacío'); return; }
 
-    const pago = document.querySelector('input[name="pago"]:checked')?.value || 'yape';
-    const notas = document.getElementById('notas').value.trim();
-    const total = cart.reduce((s, i) => s + i.price, 0);
-    const num = 'MM-' + Math.floor(100000 + Math.random() * 900000);
+  const pago = document.querySelector('input[name="pago"]:checked')?.value || 'yape';
+  const notas = document.getElementById('notas').value.trim();
+  const total = cart.reduce((s, i) => s + i.price, 0);
+  const num = 'MM-' + Math.floor(100000 + Math.random() * 900000);
 
-    const pedido = {
-        num, pago, tel, notas,
-        items: [...cart],
-        total: total.toFixed(2),
-        estado: 0, // 0=confirmado,1=preparando,2=listo,3=entregado
-        creado: new Date().toISOString()
-    };
+  const pedido = {
+    num, pago, tel, notas, modalidad,
+    direccion: modalidad === 'delivery' ? direccion : 'Jr. Grau 245, Chosica',
+    items: [...cart],
+    total: total.toFixed(2),
+    estado: 0,
+    creado: new Date().toISOString()
+  };
 
-    localStorage.setItem('mamamia_pedido', JSON.stringify(pedido));
-    // Limpiar carrito
-    cart = []; save();
-    // Redirigir a confirmación
-    location.href = 'mipedido.html';
+  localStorage.setItem('mamamia_pedido', JSON.stringify(pedido));
+  cart = []; save();
+  location.href = 'mipedido.html';
 }
 
 render();

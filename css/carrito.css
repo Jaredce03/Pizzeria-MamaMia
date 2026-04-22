@@ -346,6 +346,92 @@ body {
 }
 
 /* Pago */
+.modalidad-section {
+    padding: 0 1.6rem 1rem;
+}
+
+.modalidad-section h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.modalidad-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.modalidad-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.modalidad-card input {
+    display: none;
+}
+
+.modalidad-card.active-modal {
+    border-color: var(--red);
+    background: #FEF2F2;
+}
+
+.modalidad-card:hover {
+    border-color: var(--red);
+}
+
+.modalidad-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.modalidad-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.modalidad-desc {
+    font-size: 0.74rem;
+    color: var(--gray);
+    margin-top: 0.1rem;
+}
+
+.modalidad-card.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.direccion-wrap {
+    margin-top: 0.5rem;
+}
+
+.direccion-wrap input {
+    width: 100%;
+    background: #F5F0EB;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.direccion-wrap input:focus {
+    border-color: var(--red);
+}
+
+/* Pago */
 .pago-section {
     padding: 0 1.6rem 1rem;
 }

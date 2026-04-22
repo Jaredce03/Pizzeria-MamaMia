@@ -10,28 +10,7 @@
 </head>
 <body>
 
-  <nav id="navbar">
-    <a class="nav-logo" href="index.html">
-      <div class="nav-logo-icon">🍕</div>
-      <span class="nav-logo-text">Mama Mia</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="menu.html">Menú</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="mipedido.html">Mi Pedido</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="nav-cart active-cart" onclick="location.href='carrito.html'">
-        🛒 <span id="cartCount" class="cart-count">0</span>
-      </button>
-      <a href="login.html" class="nav-signin">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        Iniciar sesión
-      </a>
-    </div>
-  </nav>
+  
 
   <main class="carrito-main">
 
@@ -85,19 +64,38 @@
         </div>
         <div class="resumen-linea">
           <span>Modalidad</span>
-          <span class="modalidad-badge">🏪 Recojo en local</span>
+          <span class="modalidad-badge">🏪 Recojo en local o delivery</span>
         </div>
         <div class="resumen-linea total">
           <span>Total</span>
           <span id="resTotal">S/ 0.00</span>
         </div>
 
-        <!-- Info recojo -->
-        <div class="recojo-info">
-          <div class="recojo-icon">🏪</div>
-          <div>
-            <p class="recojo-title">Recojo en local</p>
-            <p class="recojo-sub">Tu pedido estará listo para recoger en el restaurante en aprox. 20–30 min.</p>
+        <!-- Modalidad -->
+        <div class="modalidad-section" id="modalidadSection">
+          <h4>Modalidad</h4>
+          <div class="modalidad-grid">
+            <label class="modalidad-card active-modal" id="modalRecojo">
+              <input type="radio" name="modalidad" value="recojo" checked onchange="onModalidad()"/>
+              <span class="modalidad-icon">🏪</span>
+              <div>
+                <p class="modalidad-name">Recojo en local</p>
+                <p class="modalidad-desc">Listo en 20–30 min. Jr. Grau 245, Chosica</p>
+              </div>
+            </label>
+            <label class="modalidad-card" id="modalDelivery">
+              <input type="radio" name="modalidad" value="delivery" onchange="onModalidad()"/>
+              <span class="modalidad-icon">🛵</span>
+              <div>
+                <p class="modalidad-name">Delivery</p>
+                <p class="modalidad-desc">Solo con pago con tarjeta. 30–45 min aprox.</p>
+              </div>
+            </label>
+          </div>
+          <!-- Dirección (solo delivery) -->
+          <div class="direccion-wrap hidden" id="direccionWrap">
+            <input type="text" placeholder="📍 Dirección de entrega *" id="direccion"/>
+            <span class="field-error" id="dirErr"></span>
           </div>
         </div>
 

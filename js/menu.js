@@ -229,6 +229,7 @@ function addToCart() {
     cart.push(item);
     localStorage.setItem('mamamia_cart', JSON.stringify(cart));
     updateCartBadge();
+    if (typeof updateNavCartBadge === 'function') updateNavCartBadge();
     showToast();
     closeDetailBtn();
 }

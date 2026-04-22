@@ -11,13 +11,26 @@ if (navbar) {
     });
 }
 
-// Nav: marcar link activo según la página actual
+// Nav: marcar link activo según página actual
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {
-    const linkPage = link.getAttribute('href');
-    if (linkPage === currentPage) {
-        link.classList.add('active');
-    } else {
-        link.classList.remove('active');
-    }
+    link.classList.toggle('active', link.getAttribute('href') === currentPage);
 });
+
+// Badge carrito global — visible en TODAS las páginas
+function updateNavCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('mamamia_cart') || '[]');
+    const total = cart.reduce((s, i) => s + (i.qty || 1), 0);
+    const badge = document.getElementById('navCartBadge');
+    if (!badge) return;
+    if (total > 0) {
+        badge.textContent = total;
+        badge.style.display = 'flex';
+    } else {
+        badge.style.display = 'none';
+    }
+}
+
+// Ejecutar al cargar y escuchar cambios de localStorage (otras pestañas)
+updateNavCartBadge();
+window.addEventListener('storage', updateNavCartBadge);
