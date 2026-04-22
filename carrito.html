@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Carrito — Mama Mia Pizzería</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/carrito.css"/>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">🍕</div>
+      <span class="nav-logo-text">Mama Mia</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="menu.html">Menú</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="mipedido.html">Mi Pedido</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-cart active-cart" onclick="location.href='carrito.html'">
+        🛒 <span id="cartCount" class="cart-count">0</span>
+      </button>
+      <a href="login.html" class="nav-signin">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Iniciar sesión
+      </a>
+    </div>
+  </nav>
+
+  <main class="carrito-main">
+
+    <!-- Columna izquierda: items -->
+    <div class="carrito-left">
+      <nav class="breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>›</span>
+        <span>Mi Carrito</span>
+      </nav>
+
+      <div class="carrito-header">
+        <h1>Mi Carrito</h1>
+        <p class="carrito-count" id="carritoCount">0 productos en tu pedido</p>
+      </div>
+
+      <!-- Items -->
+      <div class="items-list" id="itemsList">
+        <!-- Renderizado por JS -->
+      </div>
+
+      <!-- Carrito vacío -->
+      <div class="empty-cart hidden" id="emptyCart">
+        <div class="empty-icon">🛒</div>
+        <h3>Tu carrito está vacío</h3>
+        <p>Agrega tus pizzas favoritas desde el menú</p>
+        <a href="menu.html" class="btn-red">Ver el Menú</a>
+      </div>
+
+      <!-- Acciones -->
+      <div class="carrito-actions" id="carritoActions">
+        <a href="menu.html" class="add-more">+ Añadir más productos</a>
+        <button class="vaciar-btn" onclick="vaciarCarrito()">Vaciar carrito</button>
+      </div>
+    </div>
+
+    <!-- Columna derecha: resumen -->
+    <div class="carrito-right" id="carritoRight">
+      <div class="resumen-card">
+        <div class="resumen-header">
+          <h2>Confirmar Pedido</h2>
+          <p class="resumen-user">👤 Cliente</p>
+        </div>
+
+        <!-- Lista resumen -->
+        <div class="resumen-items" id="resumenItems"></div>
+
+        <div class="resumen-linea">
+          <span>Subtotal</span>
+          <span id="resSubtotal">S/ 0.00</span>
+        </div>
+        <div class="resumen-linea">
+          <span>Modalidad</span>
+          <span class="modalidad-badge">🏪 Recojo en local</span>
+        </div>
+        <div class="resumen-linea total">
+          <span>Total</span>
+          <span id="resTotal">S/ 0.00</span>
+        </div>
+
+        <!-- Info recojo -->
+        <div class="recojo-info">
+          <div class="recojo-icon">🏪</div>
+          <div>
+            <p class="recojo-title">Recojo en local</p>
+            <p class="recojo-sub">Tu pedido estará listo para recoger en el restaurante en aprox. 20–30 min.</p>
+          </div>
+        </div>
+
+        <!-- Método de pago -->
+        <div class="pago-section">
+          <h4>Método de pago</h4>
+          <p class="pago-nota">💡 Solo aceptamos pago anticipado. Esto garantiza que tu pizza se prepare solo cuando el pago es confirmado.</p>
+          <div class="pago-grid">
+            <label class="pago-card">
+              <input type="radio" name="pago" value="yape" checked onchange="selectPago(this)"/>
+              <span class="pago-icon">📱</span>
+              <span class="pago-name">Yape</span>
+            </label>
+            <label class="pago-card">
+              <input type="radio" name="pago" value="plin" onchange="selectPago(this)"/>
+              <span class="pago-icon">💜</span>
+              <span class="pago-name">Plin</span>
+            </label>
+            <label class="pago-card">
+              <input type="radio" name="pago" value="tarjeta" onchange="selectPago(this)"/>
+              <span class="pago-icon">💳</span>
+              <span class="pago-name">Tarjeta</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="contacto-section">
+          <h4>Datos de contacto</h4>
+          <div class="field">
+            <input type="tel" placeholder="📞 Teléfono de contacto *" id="telefono"/>
+            <span class="field-error" id="telErr"></span>
+          </div>
+          <div class="field">
+            <textarea placeholder="Notas adicionales (opcional)" id="notas" rows="2"></textarea>
+          </div>
+        </div>
+
+        <button class="btn-confirmar" id="btnConfirmar" onclick="confirmarPedido()">
+          ✓ Confirmar Pedido · <span id="btnTotal">S/ 0.00</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">🍕 Mama Mia Pizzería</div>
+    <div class="footer-copy">© 2026 Mama Mia. Todos los derechos reservados.</div>
+    <div class="footer-links">
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>
