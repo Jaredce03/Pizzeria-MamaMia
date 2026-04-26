@@ -229,20 +229,23 @@ function addToCart() {
     cart.push(item);
     localStorage.setItem('mamamia_cart', JSON.stringify(cart));
     updateCartBadge();
-    if (typeof updateNavCartBadge === 'function') updateNavCartBadge();
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
     showToast();
     closeDetailBtn();
 }
 
 // ── BADGE CARRITO ──
 function updateCartBadge() {
-    const total = cart.reduce((sum, i) => sum + i.qty, 0);
-    const badge = document.getElementById('cartCount');
-    if (total > 0) {
-        badge.style.display = 'flex';
-        badge.textContent = total;
-    } else {
-        badge.style.display = 'none';
+    function updateCartBadge() {
+        const total = cart.reduce((sum, i) => sum + i.qty, 0);
+        const badge = document.getElementById('navCartBadge');
+        if (!badge) return;
+        if (total > 0) {
+            badge.textContent = total;
+            badge.style.display = 'flex';
+        } else {
+            badge.style.display = 'none';
+        }
     }
 }
 

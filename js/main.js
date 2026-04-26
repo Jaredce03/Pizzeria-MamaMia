@@ -34,3 +34,4 @@ function updateNavCartBadge() {
 // Ejecutar al cargar y escuchar cambios de localStorage (otras pestañas)
 updateNavCartBadge();
 window.addEventListener('storage', updateNavCartBadge);
+window.addEventListener('cartUpdated', updateNavCartBadge);
