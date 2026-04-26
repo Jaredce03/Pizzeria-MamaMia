@@ -132,6 +132,10 @@ function handleLogin() {
             showToast('✅ Acceso admin detectado, redirigiendo...');
             setTimeout(() => location.href = 'admin.html', 1200);
         } else {
+            // Guardar sesión simulada
+            const usuario = { nombre: email.split('@')[0], email };
+            localStorage.setItem('mamamia_usuario', JSON.stringify(usuario));
+
             showToast('✅ ¡Bienvenido de vuelta!');
             setTimeout(() => location.href = 'index.html', 1200);
         }

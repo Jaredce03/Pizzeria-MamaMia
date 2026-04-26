@@ -169,9 +169,8 @@ function confirmarPedido() {
     creado: new Date().toISOString()
   };
 
-  localStorage.setItem('mamamia_pedido', JSON.stringify(pedido));
-  cart = []; save();
-  location.href = 'mipedido.html';
+  localStorage.setItem('mamamia_pedido_pendiente', JSON.stringify(pedido));
+  location.href = 'pago.html';
 }
 
 render();

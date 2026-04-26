@@ -208,6 +208,15 @@ function updateTotal() {
 function addToCart() {
     if (!currentPizza) return;
 
+    // Verificar sesión
+    const usuario = JSON.parse(localStorage.getItem('mamamia_usuario') || 'null');
+    if (!usuario) {
+        localStorage.setItem('mamamia_redirect', 'menu.html');
+        showToast('⚠️ Debes iniciar sesión primero');
+        setTimeout(() => location.href = 'login.html', 1200);
+        return;
+    }
+
     const extras = [];
     document.querySelectorAll('.extra-item input:checked').forEach(i => {
         extras.push(i.nextElementSibling.nextElementSibling.textContent);
