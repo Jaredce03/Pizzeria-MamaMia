@@ -297,6 +297,18 @@
           </select>
         </div>
         <div class="cfg-field"><label>Descripción</label><textarea id="pDesc" rows="3" placeholder="Descripción del producto..."></textarea></div>
+        <div class="cfg-field">
+          <label>Imagen del producto</label>
+          <div class="img-upload-wrap" id="imgUploadWrap" onclick="document.getElementById('pImagen').click()">
+            <img class="img-preview" id="imgPreview" src="" alt="" style="display:none"/>
+            <div class="img-placeholder" id="imgPlaceholder">
+              <span>📷</span>
+              <p>Haz clic para subir imagen</p>
+              <p class="img-hint">JPG, PNG o WEBP — máx. 5MB</p>
+            </div>
+          </div>
+          <input type="file" id="pImagen" accept="image/*" style="display:none" onchange="previewImagen(this)"/>
+        </div>
         <div class="form-row-2">
           <div class="cfg-field"><label>Precio personal (S/)</label><input type="number" id="pPersonal" placeholder="0.00"/></div>
           <div class="cfg-field"><label>Precio mediana (S/)</label><input type="number" id="pMediana" placeholder="0.00"/></div>
