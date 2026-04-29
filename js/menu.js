@@ -9,9 +9,9 @@ const pizzas = {
         desc: 'La reina de las pizzas. Salsa de tomate San Marzano, mozzarella fior di latte y albahaca fresca sobre masa napolitana perfecta.',
         cat: 'Clásicas', catColor: '#D4A843',
         basePrice: 28.90,
-        img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80',
+        img: 'img/pizza_margherita.png',
         ingredients: ['Salsa San Marzano', 'Mozzarella fior di latte', 'Albahaca fresca', 'Aceite de oliva extra virgen'],
-        related: ['diavola', 'verdure', 'prosciutto']
+        related: ['diavola', 'verdure', 'pesto_pollo']
     },
     diavola: {
         name: 'Diávola Ardiente',
@@ -29,16 +29,16 @@ const pizzas = {
         basePrice: 30.90,
         img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&q=80',
         ingredients: ['Calabacín', 'Pimientos asados', 'Berenjenas', 'Tomates cherry', 'Rúcula', 'Queso de cabra'],
-        related: ['margherita', 'prosciutto', 'quattro']
+        related: ['margherita', 'pesto_pollo', 'quattro']
     },
-    prosciutto: {
-        name: 'Prosciutto e Rúcula',
-        desc: 'Elegancia italiana en cada bocado. Jamón crudo DOP sobre base blanca con mozzarella, rúcula silvestre y parmigiano reggiano.',
+    pesto_pollo: {
+        name: 'Pizza Pesto y Pollo',
+        desc: 'Base de salsa pesto genovés artesanal, mozzarella, jugosos trozos de pollo a la parrilla y tomates cherry frescos.',
         cat: 'Gourmet', catColor: '#8B5CF6',
         basePrice: 42.90,
-        img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80',
-        ingredients: ['Jamón crudo DOP', 'Base blanca', 'Mozzarella', 'Rúcula silvestre', 'Parmigiano Reggiano'],
-        related: ['tartufo', 'margherita', 'diavola']
+        img: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?w=800&q=80',
+        ingredients: ['Pesto genovés', 'Mozzarella', 'Pollo a la parrilla', 'Tomates cherry', 'Parmesano'],
+        related: ['tartufo', 'margherita', 'siciliana']
     },
     quattro: {
         name: 'Quattro Stagioni',
@@ -47,7 +47,7 @@ const pizzas = {
         basePrice: 38.90,
         img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80',
         ingredients: ['Champiñones', 'Aceitunas negras', 'Alcachofas', 'Jamón cocido', 'Mozzarella'],
-        related: ['margherita', 'verdure', 'prosciutto']
+        related: ['margherita', 'verdure', 'pesto_pollo']
     },
     tartufo: {
         name: 'Tartufo Nero',
@@ -56,7 +56,97 @@ const pizzas = {
         basePrice: 46.90,
         img: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=800&q=80',
         ingredients: ['Crema de trufa negra', 'Mozzarella de búfala', 'Porcini', 'Virutas de trufa', 'Aceite de trufa'],
-        related: ['prosciutto', 'diavola', 'quattro']
+        related: ['pesto_pollo', 'diavola', 'quattro']
+    },
+    americana: {
+        name: 'Americana Clásica',
+        desc: 'La favorita de los niños. Queso mozzarella fundido y abundante jamón inglés sobre nuestra base tradicional.',
+        cat: 'Clásicas', catColor: '#D4A843',
+        basePrice: 25.90,
+        img: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Mozzarella', 'Jamón inglés', 'Orégano'],
+        related: ['hawaiana', 'margherita', 'pepperoni']
+    },
+    hawaiana: {
+        name: 'Hawaiana',
+        desc: 'Un clásico tropical. Jamón inglés y trozos de piña fresca asada para un toque dulce perfecto.',
+        cat: 'Clásicas', catColor: '#D4A843',
+        basePrice: 28.90,
+        img: 'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Mozzarella', 'Jamón inglés', 'Piña asada'],
+        related: ['americana', 'suprema', 'pepperoni']
+    },
+    carnivora: {
+        name: 'Carnívora',
+        desc: 'Para los amantes de la carne. Pepperoni, jamón, salchicha italiana, tocino y carne molida.',
+        cat: 'Especiales', catColor: '#C8372D',
+        basePrice: 38.90,
+        img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Mozzarella', 'Pepperoni', 'Jamón', 'Tocino', 'Salchicha'],
+        related: ['diavola', 'suprema', 'alemana']
+    },
+    suprema: {
+        name: 'Suprema',
+        desc: 'La combinación perfecta. Pepperoni, salchicha, champiñones, cebolla roja, pimientos y aceitunas negras.',
+        cat: 'Especiales', catColor: '#C8372D',
+        basePrice: 39.90,
+        img: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=800&q=80',
+        ingredients: ['Pepperoni', 'Salchicha', 'Champiñones', 'Pimientos', 'Cebolla roja', 'Aceitunas'],
+        related: ['carnivora', 'quattro', 'continental']
+    },
+    napolitana: {
+        name: 'Auténtica Napolitana',
+        desc: 'Simple y deliciosa. Tomate en rodajas frescas, abundante ajo, orégano y un toque de anchoas.',
+        cat: 'Clásicas', catColor: '#D4A843',
+        basePrice: 26.90,
+        img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80',
+        ingredients: ['Tomates frescos', 'Ajo', 'Orégano', 'Anchoas', 'Aceite de oliva'],
+        related: ['margherita', 'siciliana', 'verdure']
+    },
+    siciliana: {
+        name: 'Siciliana',
+        desc: 'Sabor del sur de Italia. Alcaparras, anchoas, aceitunas negras y un toque de ají sobre base roja.',
+        cat: 'Gourmet', catColor: '#8B5CF6',
+        basePrice: 35.90,
+        img: 'https://images.unsplash.com/photo-1552539618-7eec9b4d1796?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Alcaparras', 'Anchoas', 'Aceitunas negras', 'Ají seco'],
+        related: ['napolitana', 'pesto_pollo', 'tartufo']
+    },
+    pepperoni: {
+        name: 'Pepperoni Lover',
+        desc: 'Doble porción de pepperoni premium americano sobre una capa generosa de queso mozzarella.',
+        cat: 'Clásicas', catColor: '#D4A843',
+        basePrice: 29.90,
+        img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Mozzarella', 'Doble Pepperoni', 'Orégano'],
+        related: ['americana', 'carnivora', 'diavola']
+    },
+    alemana: {
+        name: 'Alemana',
+        desc: 'Un sabor robusto. Salchicha blanca, tocino crujiente y cebolla blanca sobre queso fundido.',
+        cat: 'Especiales', catColor: '#C8372D',
+        basePrice: 36.90,
+        img: 'https://images.unsplash.com/photo-1544982503-9f984c14501a?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Mozzarella', 'Salchicha blanca', 'Tocino', 'Cebolla'],
+        related: ['carnivora', 'quattro', 'suprema']
+    },
+    continental: {
+        name: 'Continental',
+        desc: 'Fresca y variada. Champiñones, cebolla, pimiento verde, aceitunas y trozos de tomate fresco.',
+        cat: 'Vegetarianas', catColor: '#4A9E6E',
+        basePrice: 32.90,
+        img: 'https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=800&q=80',
+        ingredients: ['Salsa de tomate', 'Mozzarella', 'Champiñones', 'Cebolla', 'Pimiento', 'Aceitunas'],
+        related: ['verdure', 'quattro', 'suprema']
+    },
+    cuatroquesos: {
+        name: 'Cuatro Quesos',
+        desc: 'Una explosión láctea. Mozzarella, Gorgonzola, Parmesano y queso Provolone derretidos a la perfección.',
+        cat: 'Gourmet', catColor: '#8B5CF6',
+        basePrice: 40.90,
+        img: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?w=800&q=80',
+        ingredients: ['Base blanca', 'Mozzarella', 'Gorgonzola', 'Parmesano', 'Provolone'],
+        related: ['tartufo', 'pesto_pollo', 'siciliana']
     }
 };
 
@@ -245,16 +335,14 @@ function addToCart() {
 
 // ── BADGE CARRITO ──
 function updateCartBadge() {
-    function updateCartBadge() {
-        const total = cart.reduce((sum, i) => sum + i.qty, 0);
-        const badge = document.getElementById('navCartBadge');
-        if (!badge) return;
-        if (total > 0) {
-            badge.textContent = total;
-            badge.style.display = 'flex';
-        } else {
-            badge.style.display = 'none';
-        }
+    const total = cart.reduce((sum, i) => sum + i.qty, 0);
+    const badge = document.getElementById('navCartBadge');
+    if (!badge) return;
+    if (total > 0) {
+        badge.textContent = total;
+        badge.style.display = 'flex';
+    } else {
+        badge.style.display = 'none';
     }
 }
 

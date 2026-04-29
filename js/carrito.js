@@ -4,14 +4,14 @@
 
 let cart = JSON.parse(localStorage.getItem('mamamia_cart') || '[]');
 const pizzaImgs = {
-  margherita: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80',
-  diavola: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80',
-  verdure: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=200&q=80',
-  prosciutto: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80',
-  quattro: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80',
-  tartufo: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=200&q=80',
+  margherita: 'img/pizza_margherita.png',
+  diavola: 'img/pizza_margherita.png',
+  verdure: 'img/pizza_margherita.png',
+  prosciutto: 'img/pizza_margherita.png',
+  quattro: 'img/pizza_margherita.png',
+  tartufo: 'img/pizza_margherita.png',
 };
-const defaultImg = 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80';
+const defaultImg = 'img/pizza_margherita.png';
 
 function getImg(name) {
   const key = Object.keys(pizzaImgs).find(k => name.toLowerCase().includes(k));
