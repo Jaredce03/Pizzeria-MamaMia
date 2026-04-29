@@ -4,12 +4,12 @@
 
 // ── DATOS DE DEMO ──
 const PRODUCTOS = [
-    { id: 1, nombre: 'Margherita Classica', cat: 'clasicas', desc: 'Salsa San Marzano, mozzarella fior di latte y albahaca fresca.', precios: { personal: 28.90, mediana: 33.90, familiar: 39.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=70', vendidos: 48 },
-    { id: 2, nombre: 'Diávola Ardiente', cat: 'especiales', desc: 'Pepperoni premium, jalapeños y salsa arrabiata.', precios: { personal: 34.90, mediana: 39.90, familiar: 45.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=70', vendidos: 35 },
-    { id: 3, nombre: 'Verdure di Stagione', cat: 'vegetarianas', desc: 'Calabacín, pimientos, berenjenas y tomates cherry.', precios: { personal: 30.90, mediana: 35.90, familiar: 41.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=70', vendidos: 22 },
-    { id: 4, nombre: 'Prosciutto e Rúcula', cat: 'gourmet', desc: 'Jamón crudo DOP, mozzarella y parmigiano reggiano.', precios: { personal: 42.90, mediana: 47.90, familiar: 54.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=70', vendidos: 18 },
-    { id: 5, nombre: 'Quattro Stagioni', cat: 'clasicas', desc: 'Champiñones, aceitunas, alcachofas y jamón cocido.', precios: { personal: 38.90, mediana: 43.90, familiar: 49.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=70', vendidos: 14 },
-    { id: 6, nombre: 'Tartufo Nero', cat: 'gourmet', desc: 'Crema de trufa negra, mozzarella de búfala y porcini.', precios: { personal: 46.90, mediana: 51.90, familiar: 58.90 }, estado: 'inactivo', img: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&q=70', vendidos: 9 },
+    { id: 1, nombre: 'Margherita Classica', cat: 'clasicas', desc: 'Salsa San Marzano, mozzarella fior di latte y albahaca fresca.', precios: { personal: 28.90, mediana: 33.90, familiar: 39.90 }, estado: 'activo', img: 'img/pizza_margherita.png', vendidos: 48 },
+    { id: 2, nombre: 'Diávola Ardiente', cat: 'especiales', desc: 'Pepperoni premium, jalapeños y salsa arrabiata.', precios: { personal: 34.90, mediana: 39.90, familiar: 45.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80', vendidos: 35 },
+    { id: 3, nombre: 'Verdure di Stagione', cat: 'vegetarianas', desc: 'Calabacín, pimientos, berenjenas y tomates cherry.', precios: { personal: 30.90, mediana: 35.90, familiar: 41.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&q=80', vendidos: 22 },
+    { id: 4, nombre: 'Pizza Pesto y Pollo', cat: 'gourmet', desc: 'Base de salsa pesto genovés artesanal, mozzarella, pollo a la parrilla y tomates cherry.', precios: { personal: 42.90, mediana: 47.90, familiar: 54.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?w=800&q=80', vendidos: 18 },
+    { id: 5, nombre: 'Quattro Stagioni', cat: 'clasicas', desc: 'Champiñones, aceitunas, alcachofas y jamón cocido.', precios: { personal: 38.90, mediana: 43.90, familiar: 49.90 }, estado: 'activo', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80', vendidos: 14 },
+    { id: 6, nombre: 'Tartufo Nero', cat: 'gourmet', desc: 'Crema de trufa negra, mozzarella de búfala y porcini.', precios: { personal: 46.90, mediana: 51.90, familiar: 58.90 }, estado: 'inactivo', img: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=800&q=80', vendidos: 9 },
 ];
 
 const PEDIDOS = [

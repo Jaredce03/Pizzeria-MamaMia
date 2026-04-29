@@ -20,12 +20,22 @@ const ESTADOS = [
 const pagoLabels = { yape: '📱 Yape', plin: '💜 Plin', tarjeta: '💳 Tarjeta' };
 
 const pizzaImgs = {
-    margherita: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80',
-    diavola: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80',
-    verdure: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=200&q=80',
-    prosciutto: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80',
-    quattro: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80',
-    tartufo: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=200&q=80',
+    margherita: 'img/pizza_margherita.png',
+    diavola: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80',
+    verdure: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&q=80',
+    pesto_pollo: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?w=800&q=80',
+    quattro: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80',
+    tartufo: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=800&q=80',
+    americana: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&q=80',
+    hawaiana: 'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=800&q=80',
+    carnivora: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&q=80',
+    suprema: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=800&q=80',
+    napolitana: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80',
+    siciliana: 'https://images.unsplash.com/photo-1552539618-7eec9b4d1796?w=800&q=80',
+    pepperoni: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&q=80',
+    alemana: 'https://images.unsplash.com/photo-1544982503-9f984c14501a?w=800&q=80',
+    continental: 'https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=800&q=80',
+    cuatroquesos: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?w=800&q=80'
 };
 
 function getImg(name) {

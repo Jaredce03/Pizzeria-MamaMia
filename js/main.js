@@ -96,3 +96,4 @@ updateNavUser();
 updateNavCartBadge();
 window.addEventListener('storage', updateNavCartBadge);
 window.addEventListener('cartUpdated', updateNavCartBadge);
+

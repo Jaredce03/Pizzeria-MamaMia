@@ -13,7 +13,7 @@
   <!-- NAV -->
   <nav id="navbar">
     <a class="nav-logo" href="index.html">
-      <div class="nav-logo-icon">🍕</div>
+      <img src="img/logo.png" alt="Logo" class="nav-logo-icon" style="background:none; padding:0; object-fit:cover;"/>
       <span class="nav-logo-text">Mama Mia</span>
     </a>
     <ul class="nav-links">
@@ -25,7 +25,7 @@
     </ul>
     <div class="nav-right">
       <button class="nav-cart" onclick="location.href='carrito.html'" aria-label="Carrito">
-      🛒 <span class="nav-cart-badge" id="navCartBadge"></span>
+      <span style="font-size:1.1rem; display:inline-block; margin-right:4px;">🛍️</span> <span class="nav-cart-badge" id="navCartBadge"></span>
       </button>
       <a href="login.html" class="nav-signin">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -147,13 +147,38 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">🍕 Mama Mia Pizzería</div>
-    <div class="footer-copy">© 2026 Mama Mia. Todos los derechos reservados.</div>
-    <div class="footer-links">
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="admin.html">Admin</a>
+    <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="img/logo.png" alt="Logo"> Mama Mia
+        </div>
+        <p class="footer-desc">Auténtica pizza napolitana en el corazón de Chosica. Masa fermentada 48 horas y horneada a la leña.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-info">
+          <span>📍 Av. Lima Sur 617, Chosica, Lima</span>
+          <span>📞 +51 1 360 7890 | +51 942 957 236</span>
+          <span>✉️ hola@pizzeriamamamia.pe</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <div class="footer-info">
+          <span>Lunes a Viernes: 12:00 – 22:00</span>
+          <span>Sábado y Domingo: 12:00 – 23:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Mama Mia. Todos los derechos reservados.</div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="admin.html">Admin</a>
+      </div>
     </div>
   </footer>
 
