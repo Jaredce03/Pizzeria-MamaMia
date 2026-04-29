@@ -212,9 +212,32 @@ function filterProductos(cat, btn) {
     renderProductos();
 }
 
+function previewImagen(input) {
+    const file = input.files[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+        showToast('❌ La imagen no debe superar 5MB');
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        const preview = document.getElementById('imgPreview');
+        const placeholder = document.getElementById('imgPlaceholder');
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        placeholder.style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+}
+
 function openProductoModal(idx = null) {
     productoEditando = idx;
     const title = document.getElementById('modalProductoTitle');
+    // Al abrir modal nuevo (idx === null), resetear imagen
+    document.getElementById('imgPreview').style.display = 'none';
+    document.getElementById('imgPlaceholder').style.display = 'flex';
+    document.getElementById('imgPreview').src = '';
+    document.getElementById('pImagen').value = '';
     if (idx !== null) {
         const p = productosFiltrados[idx];
         title.textContent = 'Editar pizza';
@@ -225,6 +248,13 @@ function openProductoModal(idx = null) {
         document.getElementById('pMediana').value = p.precios.mediana;
         document.getElementById('pFamiliar').value = p.precios.familiar;
         document.getElementById('pEstado').value = p.estado;
+        // Mostrar imagen actual del producto
+        const preview = document.getElementById('imgPreview');
+        const placeholder = document.getElementById('imgPlaceholder');
+        preview.src = p.img;
+        preview.style.display = 'block';
+        placeholder.style.display = 'none';
+
     } else {
         title.textContent = 'Agregar pizza';
         ['pNombre', 'pDesc', 'pPersonal', 'pMediana', 'pFamiliar'].forEach(id => document.getElementById(id).value = '');
