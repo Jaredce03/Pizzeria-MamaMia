@@ -6,7 +6,7 @@
   <title>Mi Pedido — Mama Mia Pizzería</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="css/mipedido.css"/>
+  <link rel="stylesheet" href="css/Mipedido.css"/>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
       <li><a href="menu.html">Menú</a></li>
       <li><a href="nosotros.html">Nosotros</a></li>
       <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="mipedido.html" class="active">Mi Pedido</a></li>
+      <li><a href="Mipedido.html" class="active">Mi Pedido</a></li>
     </ul>
     <div class="nav-right">
       <button class="nav-cart" onclick="location.href='carrito.html'">🛒</button>
@@ -107,6 +107,12 @@
 
           <!-- Nuevo pedido -->
           <a href="menu.html" class="btn-nuevo-pedido">🍕 Hacer nuevo pedido</a>
+
+          <!-- HISTORIAL DE PEDIDOS -->
+          <section class="historial-section">
+            <h2 class="historial-title">Historial de pedidos</h2>
+            <div id="historialList"></div>
+          </section>
         </div>
 
       </div>
@@ -127,6 +133,6 @@
   <div class="toast" id="toast"></div>
 
   <script src="js/main.js"></script>
-  <script src="js/mipedido.js"></script>
+  <script src="js/Mipedido.js"></script>
 </body>
 </html>

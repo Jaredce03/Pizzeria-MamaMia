@@ -50,9 +50,9 @@ function updateNavUser() {
             <p class="dropdown-name">${usuario.nombre}</p>
             <p class="dropdown-email">${usuario.email}</p>
           </div>
-          <a href="mipedido.html" class="dropdown-item">📦 Mi pedido</a>
-          <a href="#" class="dropdown-item">👤 Mi perfil</a>
-          <a href="#" class="dropdown-item">⚙️ Ajustes</a>
+          <a href="Mipedido.html" class="dropdown-item">📦 Mi pedido</a>
+          <a href="perfil.html" class="dropdown-item">👤 Mi perfil</a>
+          <a href="ajustes.html" class="dropdown-item">⚙️ Ajustes</a>
           <div class="dropdown-divider"></div>
           <button class="dropdown-item logout" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
         </div>
@@ -73,6 +73,8 @@ function toggleUserMenu() {
 function cerrarSesion() {
     if (confirm('¿Cerrar sesión?')) {
         localStorage.removeItem('mamamia_usuario');
+        localStorage.removeItem('mamamia_pedido');
+        localStorage.removeItem('mamamia_pedido_pendiente');
         location.href = 'index.html';
     }
 }

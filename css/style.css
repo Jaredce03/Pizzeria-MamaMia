@@ -35,7 +35,7 @@ body {
 }
 
 /* ── NAV ── */
-nav {
+#navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -52,7 +52,7 @@ nav {
     transition: box-shadow 0.3s;
 }
 
-nav.scrolled {
+#navbar.scrolled {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 

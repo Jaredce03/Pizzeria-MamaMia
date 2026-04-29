@@ -245,16 +245,14 @@ function addToCart() {
 
 // ── BADGE CARRITO ──
 function updateCartBadge() {
-    function updateCartBadge() {
-        const total = cart.reduce((sum, i) => sum + i.qty, 0);
-        const badge = document.getElementById('navCartBadge');
-        if (!badge) return;
-        if (total > 0) {
-            badge.textContent = total;
-            badge.style.display = 'flex';
-        } else {
-            badge.style.display = 'none';
-        }
+    const total = cart.reduce((sum, i) => sum + i.qty, 0);
+    const badge = document.getElementById('navCartBadge');
+    if (!badge) return;
+    if (total > 0) {
+        badge.textContent = total;
+        badge.style.display = 'flex';
+    } else {
+        badge.style.display = 'none';
     }
 }
 
