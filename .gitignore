@@ -1,0 +1,36 @@
+# ========================
+#  IDEs y Editores
+# ========================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Visual Studio / VS Code
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/
+
+# Otros editores
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ========================
+#  Backend - Spring Boot
+# ========================
+target/
+*.jar
+*.war
+*.class
+.mvn/wrapper/maven-wrapper.jar
+
+# Variables de entorno
+.env
+.env.local
+application-local.properties
