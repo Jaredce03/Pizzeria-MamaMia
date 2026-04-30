@@ -333,14 +333,21 @@
     border-radius: 16px;
     padding: 2.2rem 1.8rem;
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    /* 👇 sombra más profunda y natural */
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.10),
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .valor-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+    transform: translateY(-10px);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.18),
+        0 8px 20px rgba(0, 0, 0, 0.10);
 }
 
 .valor-icon {
